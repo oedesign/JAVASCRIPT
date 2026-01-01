@@ -1,0 +1,47 @@
+Morning Session  9am - 12pm
+: Review yesterday
+: Read short js note
+: Open vsCode
+
+: Watch/read ONE topic only
+: Take handwitten or digital notes
+: Pause and test examples in console
+
+: No phone scrolling 
+: scretch / water
+
+Midday Session 
+: Hands-on coding (2hrs)
+: Rewrite small problems
+: Break things intentionally
+
+take home: if you didn't code, you didn't Learn
+
+Break 12pm -1pm 
+
+Afternoon Session 1pm - 4:30pm
+: Build or improve a real project
+: Add new features
+: Refactor code
+
+short break 2:30pm - 3pm 
+
+: read other peoples code
+: fix bugs
+: understand errors
+
+take home: This builds real developer thinking 
+
+: GitHub commit
+: write a short post 
+: update README
+: Comment on dev posts
+
+Daily Review 4:30pm - 5pm
+: what did i learn
+: what was difficult
+: note tomorrow's goal
+
+
+
+

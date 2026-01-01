@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+ <h1>WEEK 01 - Monday</h1>
+  <ul>
+    <li>Learn 'Let', 'Const' and 'Var' Variable</li>
+    <li>Understand Reassignment and Scope</li>
+    <li>Rewrite 10 Variables</li>
+    <li>Commit To GitHub</li>
+  </ul>
+<script>
+    const name = 'Oluwaseyi'; // string variable
+    let age = 22; // number variable
+
+    // reassignment
+    // name = 'Ebenezer'; // const variable name cannot be reassigned. Using the dev-tool js will throw a syntax error - uncomment the first stataement to see - highlight to the first ; and press ctrl + / to uncomment, this also works for commenting
+    age = 23; // let variable can be reassign
+    console.log(`${name} is ${age} years old`) // Js Output. Using template literal for embedding expressions.....
+
+   // rewrite 10 variables
+   let additions = 2 + 4;
+   let subtractions = 5 - 1;
+   let divisions = 4 / 2 ;
+   let multiplications = 5 * 6;
+   let exponient = 2** 4;
+   let reminder = 20 % 3;
+   let integrate = additions + subtractions + divisions + multiplications + exponient + reminder;
+
+   // more 
+
+   console.log(`result: ${integrate}`);
+</script>
+</body>
+</html>

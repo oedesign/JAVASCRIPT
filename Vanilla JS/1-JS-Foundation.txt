@@ -1,0 +1,34 @@
+Week 01 - Variables and Data Types
+Monday
+: install vsCode 
+: setup Git and GitHub
+: Learn var, let, const
+: Understand reassignment & scope
+: Write 10 variable examples 
+: Commit code to GitHub
+
+Teusday
+: Learn JS data types - string, number, boolean, null, and undefined
+: Use typeof
+: Convert data types
+: Practice 10 examples
+: Github Commit
+
+Wednesday
+: Learn arithmentic operators
+: Learn comparison operators
+: Practice expressions 
+: Build simple calculator logic
+: GitHub Commit
+
+Thursday
+: Learn logical operators
+: Practice conditions
+: Write truth table examples
+: Debug intentionals errors
+: Github Commit
+
+Friday
+: Build simple calculator (JS only)
+: Push project to GitHub 
+: Write Linkedln post - Variables & data types explained in simple terms
