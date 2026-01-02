@@ -1,5 +1,5 @@
 Morning Session  9am - 12pm
-: Review yesterday
+: Review yesterday 
 : Read short js note
 : Open vsCode
 

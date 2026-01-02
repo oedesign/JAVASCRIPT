@@ -1,0 +1,5 @@
+: GIT COMMANDS & PROMPTS;
+- U promt means that unmerged/untracked; it indicates the file has conflicts that haven't been resolved yet ..
+- R promt means renamed(staged); this happens when GIT detects that a file/folder was renamed
+- M promt means modified; it indicates that file's contents have changed compared to another Git state
+- A means added; it indicates that the file is new and will be added to the new commit area

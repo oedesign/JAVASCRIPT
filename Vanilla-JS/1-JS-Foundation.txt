@@ -1,15 +1,15 @@
 Week 01 - Variables and Data Types
 Monday
 : install vsCode 
-: setup Git and GitHub
-: Learn var, let, const
-: Understand reassignment & scope
+: setup Git and GitHub 
+: Learn var, let, and const
+: Understand reassignment & block {} scope
 : Write 10 variable examples 
 : Commit code to GitHub
 
 Teusday
 : Learn JS data types - string, number, boolean, null, and undefined
-: Use typeof
+: Use typeof 
 : Convert data types
 : Practice 10 examples
 : Github Commit

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Week 01 - Monday</title>
 </head>
 <style>
 
@@ -31,12 +31,34 @@
    let divisions = 4 / 2 ;
    let multiplications = 5 * 6;
    let exponient = 2** 4;
-   let reminder = 20 % 3;
-   let integrate = additions + subtractions + divisions + multiplications + exponient + reminder;
-
-   // more 
+   let remainder = 20 % 3;
+   let integrate = additions + subtractions + divisions + multiplications + exponient + remainder;
 
    console.log(`result: ${integrate}`);
+
+   // block scope
+   
+   {
+    let _fullName = 'Oluwaseyi Elujoba';
+   }
+
+  //  console.log(_fullName); // variable _fullName is not defined ...
+
+   // hoisting
+     $favouriteMovie = 24;
+     var $favouriteMovie;
+     console.log(`Favourite Movie: ${$favouriteMovie}`);
+
+
+     // refactor 
+     let myName = 'Ebenezer';
+     const _Year = new Date().getFullYear();
+
+     {
+      console.log(`Seyi. Welcome to ${_Year}`);
+     }
+
+
 </script>
 </body>
 </html>
