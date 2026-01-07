@@ -16,13 +16,13 @@ Teusday
 
 Wednesday
 : Learn arithmentic operators
-: Learn comparison operators
+: Learn comparison operators // ===, !==, 
 : Practice expressions 
 : Build simple calculator logic
 : GitHub Commit
 
 Thursday
-: Learn logical operators
+: Learn logical operators // !
 : Practice conditions
 : Write truth table examples
 : Debug intentionals errors

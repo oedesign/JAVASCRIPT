@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 01 - Thursday</title>
+</head>
+<body>
+  
+  <script>
+    // conditional statements
+    if (2 > 4) { // If the condition is true, it executes. If not, it doesn't.
+      console.log('true')
+    } else if ( 4 >= 4) { //  test a new condition if the first one is false
+      console.log('okay')
+    }
+    else { // executes if the condtion is false
+      console.log('false')
+    }
+
+    // switch conditional statement - syntax
+   let day =  new Date().getDay(); // 0 - 6
+
+switch (day) {
+  case 0:
+    day = 'Monday'; 
+    break;
+  case 1:
+    day = 'Teusday';
+    break;
+  case 2:
+    day = 'Wednesday';
+    break;
+  case 3:
+    day = 'Thursday';
+    break;
+  case 4: 
+    day = 'Friday';
+    break;
+  case 5:
+    day = 'Saturday';
+    break;
+  case 6:
+    day = 'Sunday';
+}
+
+const _currentHour = new Date().getHours(); // 0 -23
+
+if (_currentHour >=5 && _currentHour <12) {
+   console.log(`Good Morning! Today is ${day}`);
+} else if (_currentHour >=12 && _currentHour <17) {
+  console.log(`Good Afternoon! Today is ${day}`);
+} else if (_currentHour >=17 && _currentHour <19) {
+  console.log(`Good Evening! Today is ${day}`);
+} else {
+  console.log(`Good Night! Today is ${day}`);
+}
+
+
+  </script>
+</body>
+</html>
