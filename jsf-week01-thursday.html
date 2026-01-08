@@ -6,57 +6,75 @@
   <title>Week 01 - Thursday</title>
 </head>
 <body>
-  
-  <script>
-    // conditional statements
-    if (2 > 4) { // If the condition is true, it executes. If not, it doesn't.
-      console.log('true')
-    } else if ( 4 >= 4) { //  test a new condition if the first one is false
-      console.log('okay')
-    }
-    else { // executes if the condtion is false
-      console.log('false')
-    }
 
-    // switch conditional statement - syntax
-   let day =  new Date().getDay(); // 0 - 6
+  <main>
+    <form action="">
+      <label for="input">
+        <input type="text">
+      </label>
+    </form>
+  </main>
+  
+<script>
+// conditional statements
+if (5 > 4) { // If the condition is true, it executes. If not, it doesn't.
+  console.log('true')
+} else if ( 4 >= 4) { //  test a new condition if the first one is false
+  console.log('okay')
+}
+else { // executes if the condtion is false
+  console.log('false')
+}
+
+// switch conditional statement - syntax
+let day =  new Date().getDay(); // 1 - 7
 
 switch (day) {
-  case 0:
+  case 1:
     day = 'Monday'; 
     break;
-  case 1:
+  case 2:
     day = 'Teusday';
     break;
-  case 2:
+  case 3:
     day = 'Wednesday';
     break;
-  case 3:
+  case 4:
     day = 'Thursday';
     break;
-  case 4: 
+  case 5: 
     day = 'Friday';
     break;
-  case 5:
+  case 6:
     day = 'Saturday';
     break;
-  case 6:
+  case 7:
     day = 'Sunday';
 }
 
 const _currentHour = new Date().getHours(); // 0 -23
 
+// logic 
+// Morning: 05:00 - 11:59
+// Afternoon: 12:00 - 16:59
+// Evening: 17:00 - 20:59
+// Night: 21:00 - 04:59
+
 if (_currentHour >=5 && _currentHour <12) {
-   console.log(`Good Morning! Today is ${day}`);
+   console.log(`Good Morning! Today is ${day}.`);
 } else if (_currentHour >=12 && _currentHour <17) {
-  console.log(`Good Afternoon! Today is ${day}`);
+  console.log(`Good Afternoon! Today is ${day}.`);
 } else if (_currentHour >=17 && _currentHour <19) {
-  console.log(`Good Evening! Today is ${day}`);
+  console.log(`Good Evening! Today is ${day}.`);
 } else {
-  console.log(`Good Night! Today is ${day}`);
+  console.log(`Good Night! Today is ${day}.`);
 }
 
+// truth and false table
 
-  </script>
+
+
+
+</script>
 </body>
 </html>

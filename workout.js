@@ -1,13 +1,51 @@
-// Create a simple 'Production Calculator'
+// Truth table examples 
+function equalTo() { // equal to comparison operator
+  let _grade1 = 20;
+  let _grade2 = '20';
+  if ( _grade1 == _grade2) {
+     console.log(true);
+  }
+  else {
+    console.log(false);
+  }
+}
+equalTo();
 
-let productPrice = 1000;
-let quantity = 10;
-let discountPercentage = 20;
+function equalValueType() { // equal value and data type to comparison operator
+  let _grade1 = 20;
+  let _grade2 = 20;
+  if ( _grade1 === _grade2) {
+     console.log('this is true');
+  }
+  else {
+    console.log('this is false');
+  }
+}
+equalValueType();
 
-let totalPrice = productPrice + quantity;
+function notEqual() { // if its not the same value it returns true
+  let _grade1 = 21;
+  let _grade2 = '21';
+  if ( _grade1 != _grade2) {
+     console.log(true);
+  }
+  else {
+    console.log(false);
+  }
+}
+notEqual();
 
-discountPercentage /= 100;
+function notEqualValueData() { // if its not the same data or value it returns true
+  let _grade1 = '20';
+  let _grade2 = '20';
+  if ( _grade1 !== _grade2) {
+     console.log('okay, true');
+  }
+  else {
+    console.log('okay, false');
+  }
+}
+notEqualValueData();
 
-let finalPrice = totalPrice - discountPercentage; 
 
-console.log(totalPrice);
+
