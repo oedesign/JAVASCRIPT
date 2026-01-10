@@ -22,7 +22,7 @@ Wednesday
 : GitHub Commit
 
 Thursday
-: Learn logical operators // !
+: Learn logical operators // ! - returns true for false expressions and false for true expressions.
 : Practice conditions
 : Write truth table examples
 : Debug intentionals errors
