@@ -2,6 +2,7 @@
 // JavaScript is a high-level programming language primarily used for web development.
 // It enables interactive web pages and is an essential part of web applications.
 // JavaScript can be used on both the client-side and server-side (with Node.js).
+
 // It supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
 
 // JavaScript Prerequisites

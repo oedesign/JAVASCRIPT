@@ -32,3 +32,30 @@ Friday
 : Build simple calculator (JS only)
 : Push project to GitHub 
 : Write Linkedln post - Variables & data types explained in simple terms
+
+
+📅 WEEK 2 – CONDITIONALS
+✅ MONDAY
+:Learn if statements
+: Practice age checker
+: GitHub commit
+
+✅ TUESDAY
+: Learn if...else
+: Build grading system
+: GitHub commit
+
+✅ WEDNESDAY
+: Learn else if
+: Handle multiple conditions
+: GitHub commit
+
+✅ THURSDAY
+: Learn switch
+: Rewrite grading app using switch
+: GitHub commit
+
+📣 FRIDAY
+: Build number guessing game
+: Write README
+: LinkedIn post: “How JavaScript makes decisions (if vs switch)”
