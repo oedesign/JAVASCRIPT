@@ -1,51 +1,125 @@
-// Truth table examples 
-function equalTo() { // equal to comparison operator
-  let _grade1 = 20;
-  let _grade2 = '20';
-  if ( _grade1 == _grade2) {
-     console.log(true);
+// ================================
+// 1. CREATE AN OBJECT
+// ================================
+
+let student = {
+  id: 1,
+  name: "John Doe",
+  age: 20,
+  course: "Software Engineering",
+  scores: {
+    math: 85,
+    english: 78,
+    programming: 92
+  },
+
+  // ================================
+  // 4. OBJECT METHODS + this KEYWORD
+  // ================================
+  getAverageScore: function () {
+    let total = 0;
+    let count = 0;
+
+    for (let subject in this.scores) {
+      total += this.scores[subject];
+      count++;
+    }
+
+    return total / count;
+  },
+
+  getStudentInfo: function () {
+    return `${this.name} is enrolled in ${this.course}`;
   }
-  else {
-    console.log(false);
-  }
+};
+
+// ================================
+// 2. ACCESS PROPERTIES
+// ================================
+
+console.log("Student Name:", student.name);
+console.log("Math Score:", student.scores.math);
+
+// ================================
+// 3. ADD NEW PROPERTIES
+// ================================
+
+student.email = "john@example.com";
+student.isActive = true;
+
+console.log("Email added:", student.email);
+
+// ================================
+// 3. UPDATE PROPERTIES
+// ================================
+
+student.age = 21;
+student.course = "Full Stack Development";
+
+console.log("Updated Age:", student.age);
+console.log("Updated Course:", student.course);
+
+// ================================
+// 3. DELETE PROPERTIES
+// ================================
+
+delete student.isActive;
+console.log("isActive deleted:", student);
+
+// ================================
+// 4. CALL OBJECT METHODS
+// ================================
+
+console.log(student.getStudentInfo());
+console.log("Average Score:", student.getAverageScore());
+
+// ================================
+// 5. LOOP THROUGH OBJECT (for...in)
+// ================================
+
+console.log("Student Scores:");
+for (let subject in student.scores) {
+  console.log(subject + ":", student.scores[subject]);
 }
-equalTo();
 
-function equalValueType() { // equal value and data type to comparison operator
-  let _grade1 = 20;
-  let _grade2 = 20;
-  if ( _grade1 === _grade2) {
-     console.log('this is true');
+// ================================
+// 6. STUDENT RECORD SYSTEM (ARRAY + OBJECTS)
+// ================================
+
+let students = [
+  {
+    id: 1,
+    name: "John Doe",
+    grade: "A"
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    grade: "B"
+  },
+  {
+    id: 3,
+    name: "Michael Brown",
+    grade: "A"
   }
-  else {
-    console.log('this is false');
-  }
+];
+
+// Display all students
+console.log("Student Records:");
+for (let i = 0; i < students.length; i++) {
+  console.log(
+    `ID: ${students[i].id}, Name: ${students[i].name}, Grade: ${students[i].grade}`
+  );
 }
-equalValueType();
 
-function notEqual() { // if its not the same value it returns true
-  let _grade1 = 21;
-  let _grade2 = '21';
-  if ( _grade1 != _grade2) {
-     console.log(true);
-  }
-  else {
-    console.log(false);
-  }
-}
-notEqual();
+// ================================
+// 7. ADD NEW STUDENT
+// ================================
 
-function notEqualValueData() { // if its not the same data or value it returns true
-  let _grade1 = '20';
-  let _grade2 = '20';
-  if ( _grade1 !== _grade2) {
-     console.log('okay, true');
-  }
-  else {
-    console.log('okay, false');
-  }
-}
-notEqualValueData();
+students.push({
+  id: 4,
+  name: "Sarah Johnson",
+  grade: "A"
+});
 
-
-
+console.log("Updated Student List:", students);

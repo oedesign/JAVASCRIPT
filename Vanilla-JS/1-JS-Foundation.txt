@@ -59,3 +59,118 @@ Friday
 : Build number guessing game
 : Write README
 : LinkedIn post: “How JavaScript makes decisions (if vs switch)”
+
+
+
+
+📅 WEEK 3 – FUNCTIONS
+✅ MONDAY
+
+⬜ Function declarations
+
+⬜ Parameters & arguments
+
+⬜ 10 function examples
+
+✅ TUESDAY
+
+⬜ Return values
+
+⬜ Refactor old code into functions
+
+✅ WEDNESDAY
+
+⬜ Arrow functions
+
+⬜ Compare with regular functions
+
+✅ THURSDAY
+
+⬜ Scope (global vs local)
+
+⬜ Hoisting (intro level)
+
+📣 FRIDAY
+
+⬜ Build function-based calculator
+
+⬜ Post:
+
+“Why functions are the heart of JavaScript”
+
+
+📅 WEEK 4 – ARRAYS
+✅ MONDAY
+⬜ Create arrays
+⬜ Access elements
+⬜ Length property
+
+✅ TUESDAY
+⬜ Array methods (push, pop, shift, unshift)
+
+✅ WEDNESDAY
+⬜ Looping arrays (for, forEach)
+
+✅ THURSDAY
+⬜ map, filter (intro)
+
+📣 FRIDAY
+⬜ Build todo list logic (array-based)
+⬜ Post:
+“How arrays store and manage data in JS”
+
+
+📅 WEEK 5 – OBJECTS
+✅ MONDAY
+
+⬜ Create objects
+
+⬜ Access properties
+
+✅ TUESDAY
+
+⬜ Add/update/delete properties
+
+✅ WEDNESDAY
+
+⬜ Object methods
+
+⬜ this keyword (basic)
+
+✅ THURSDAY
+
+⬜ Loop objects (for...in)
+
+📣 FRIDAY
+
+⬜ Build student record system
+
+⬜ Post:
+
+“Objects vs Arrays in JavaScript”
+
+
+📅 WEEK 6 – LOOPS
+✅ MONDAY
+
+⬜ for loop
+
+✅ TUESDAY
+
+⬜ while loop
+
+✅ WEDNESDAY
+
+⬜ do...while
+
+✅ THURSDAY
+
+⬜ Break & continue
+
+📣 FRIDAY
+
+⬜ Build multiplication table app
+
+⬜ Post:
+
+“Mastering loops in JavaScript”

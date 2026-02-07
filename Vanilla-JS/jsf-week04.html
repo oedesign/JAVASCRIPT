@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays in JS</title>
+</head>
+<body>
+  <main>
+     <div >Length: <span id="level"></span></div>
+     <div>Skill: <span id="skill"></span></div>
+     <div>My Skills: <span id="mySkills"></span></div>
+     <div>Plans: <span id="plan"></span></div>
+  </main>
+
+  <script>
+    // Monday - array length and data manipulation
+    const skills = [' Singing', ' Communication', ' Web Development'];
+    document.getElementById('level').innerHTML = skills.length; // gettin array length '.length';
+    document.getElementById('skill').innerHTML = skills[0]; // accessing an array '[]';
+
+    // Teusday - array methods
+     skills.unshift(' Football', ' Web Design', ' Drawing'); // 
+     skills.pop();
+     document.getElementById('mySkills').innerHTML = skills;
+
+     // Wednesday - for, for each loop
+     const plan = ['Pray', 'Study', 'Rest', 'Play', 'Evaluate', 'Study', 'Pray', 'Meditate'];
+
+     for (let i = 0; i < plan.length; i++) {
+      document.getElementById('plan').innerHTML = plan[i];
+     }
+     // for each loop 
+
+
+     // Thursday - map, filter (intro)
+     
+  </script>
+</body>
+</html>
