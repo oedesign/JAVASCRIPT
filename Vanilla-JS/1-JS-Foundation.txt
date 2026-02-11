@@ -34,6 +34,7 @@ Friday
 : Write Linkedln post - Variables & data types explained in simple terms
 
 
+
 📅 WEEK 2 – CONDITIONALS
 ✅ MONDAY
 :Learn if statements
@@ -59,7 +60,6 @@ Friday
 : Build number guessing game
 : Write README
 : LinkedIn post: “How JavaScript makes decisions (if vs switch)”
-
 
 
 
@@ -99,6 +99,7 @@ Friday
 “Why functions are the heart of JavaScript”
 
 
+
 📅 WEEK 4 – ARRAYS
 ✅ MONDAY
 ⬜ Create arrays
@@ -118,6 +119,8 @@ Friday
 ⬜ Build todo list logic (array-based)
 ⬜ Post:
 “How arrays store and manage data in JS”
+
+
 
 
 📅 WEEK 5 – OBJECTS
@@ -148,6 +151,7 @@ Friday
 ⬜ Post:
 
 “Objects vs Arrays in JavaScript”
+
 
 
 📅 WEEK 6 – LOOPS
