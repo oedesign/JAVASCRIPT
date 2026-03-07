@@ -178,3 +178,327 @@ Friday
 ⬜ Post:
 
 “Mastering loops in JavaScript”
+
+
+📅 WEEK 7 – STRINGS & MATH
+✅ MONDAY
+
+⬜ String methods
+
+✅ TUESDAY
+
+⬜ Template literals
+
+✅ WEDNESDAY
+
+⬜ Math object
+
+✅ THURSDAY
+
+⬜ Random number generation
+
+📣 FRIDAY
+
+⬜ Build password generator
+
+⬜ Post:
+
+“How JavaScript handles strings & numbers”
+
+
+
+📅 WEEK 8 – ERRORS & REVIEW
+✅ MONDAY
+
+⬜ Errors & debugging
+
+⬜ Console methods
+
+✅ TUESDAY
+
+⬜ try...catch
+
+✅ WEDNESDAY
+
+⬜ Code refactoring
+
+✅ THURSDAY
+
+⬜ Review Weeks 1–7
+
+📣 FINAL FRIDAY
+
+⬜ Build quiz app
+
+⬜ Write Phase 1 reflection
+
+⬜ Post:
+
+“I completed JavaScript foundations in 8 weeks 🚀”
+
+🏁 END OF PHASE 1 RESULT
+
+✔ Strong JS fundamentals
+✔ 8 mini-projects
+✔ GitHub history
+✔ Public learning brand
+
+
+
+WEEK 9 – DOM BASICS
+✅ MONDAY
+
+- Understand the DOM
+
+- document.querySelector()
+
+- querySelectorAll()
+
+- Practice selecting elements
+
+- GitHub commit
+
+✅ TUESDAY
+
+- Change text content
+
+- Change HTML content
+
+- Practice DOM manipulation
+
+✅ WEDNESDAY
+
+- Modify styles with JS
+
+- Add/remove CSS classes
+
+✅ THURSDAY
+
+- Create elements dynamically
+
+- Append & remove elements
+
+
+
+📣 FRIDAY (PROJECT + BRANDING)
+
+- Build Interactive counter app
+
+- Push to GitHub
+
+⬜ Post:
+
+“How JavaScript interacts with HTML (DOM explained)”
+
+
+
+
+WEEK 10 – EVENTS
+✅ MONDAY
+
+⬜ Event listeners
+
+⬜ Click events
+
+✅ TUESDAY
+
+⬜ Input & form events
+
+⬜ Keyboard events
+
+✅ WEDNESDAY
+
+⬜ Event object
+
+⬜ Prevent default behavior
+
+✅ THURSDAY
+
+⬜ Event bubbling & capturing
+
+📣 FRIDAY
+
+⬜ Build form validator
+
+⬜ Post:
+
+“Understanding JavaScript events”
+
+
+
+
+
+WEEK 11 – ASYNC JAVASCRIPT
+✅ MONDAY
+
+⬜ What is async JS?
+
+⬜ Callbacks
+
+✅ TUESDAY
+
+⬜ Promises
+
+⬜ .then() & .catch()
+
+✅ WEDNESDAY
+
+⬜ async / await
+
+⬜ Error handling
+
+✅ THURSDAY
+
+⬜ Convert callbacks → async/await
+
+📣 FRIDAY
+
+⬜ Build delayed message app
+
+⬜ Post:
+
+“Why async/await changed JavaScript”
+
+
+
+
+WEEK 12 – FETCH & APIs
+✅ MONDAY
+
+⬜ What is an API?
+
+⬜ JSON structure
+
+✅ TUESDAY
+
+⬜ Fetch API (GET requests)
+
+✅ WEDNESDAY
+
+⬜ Handle API errors
+
+⬜ Loading states
+
+✅ THURSDAY
+
+⬜ Display fetched data on UI
+
+📣 FRIDAY
+
+⬜ Build quote generator app
+
+⬜ Post:
+
+“How JavaScript talks to servers (APIs)”
+
+
+WEEK 13 – LOCAL STORAGE
+✅ MONDAY
+
+⬜ What is LocalStorage?
+
+✅ TUESDAY
+
+⬜ setItem & getItem
+
+✅ WEDNESDAY
+
+⬜ removeItem & clear
+
+✅ THURSDAY
+
+⬜ Persist app data
+
+📣 FRIDAY
+
+⬜ Build persistent todo app
+
+⬜ Post:
+
+“Saving user data with LocalStorage”
+
+
+
+WEEK 14 – ADVANCED FUNCTIONS
+✅ MONDAY
+
+⬜ Higher-order functions
+
+✅ TUESDAY
+
+⬜ Closures
+
+✅ WEDNESDAY
+
+⬜ this keyword
+
+✅ THURSDAY
+
+⬜ bind, call, apply
+
+📣 FRIDAY
+
+⬜ Build counter with closure
+
+⬜ Post:
+
+“Closures explained like you’re 5”
+
+
+
+
+WEEK 15 – MODERN JAVASCRIPT (ES6+)
+✅ MONDAY
+
+⬜ Destructuring
+
+✅ TUESDAY
+
+⬜ Spread & rest operators
+
+✅ WEDNESDAY
+
+⬜ Modules (import/export)
+
+✅ THURSDAY
+
+⬜ Optional chaining
+
+⬜ Nullish coalescing
+
+📣 FRIDAY
+
+⬜ Refactor old project using ES6
+
+⬜ Post:
+
+“Modern JavaScript features I now use daily”
+
+
+
+WEEK 16 – REVIEW & CAPSTONE
+✅ MONDAY
+
+⬜ Review DOM
+
+✅ TUESDAY
+
+⬜ Review async & APIs
+
+✅ WEDNESDAY
+
+⬜ Debugging practice
+
+✅ THURSDAY
+
+⬜ Refactor code
+
+📣 FINAL FRIDAY
+
+⬜ Build Weather App (API + DOM + async)
+
+⬜ Write detailed README
+
+⬜ Post:
+
+“I completed Advanced JavaScript & DOM 🎉”
