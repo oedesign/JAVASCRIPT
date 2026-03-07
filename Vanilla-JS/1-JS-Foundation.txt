@@ -296,33 +296,30 @@ WEEK 9 – DOM BASICS
 WEEK 10 – EVENTS
 ✅ MONDAY
 
-⬜ Event listeners
+- Event listeners
 
-⬜ Click events
+- Click events
 
 ✅ TUESDAY
 
-⬜ Input & form events
+- Input & form events
 
-⬜ Keyboard events
+- Keyboard events
 
 ✅ WEDNESDAY
 
-⬜ Event object
+- Event object
 
-⬜ Prevent default behavior
+- Prevent default behavior
 
 ✅ THURSDAY
 
-⬜ Event bubbling & capturing
+- Event bubbling & capturing
 
 📣 FRIDAY
 
-⬜ Build form validator
+- Build form validator
 
-⬜ Post:
-
-“Understanding JavaScript events”
 
 
 
