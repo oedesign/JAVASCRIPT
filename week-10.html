@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Foundations Showcase</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      border-radius: 16px;
+      padding: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+      color: #000;
+    }
+
+    .card p,
+    .card li {
+      color: #222;
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      padding-left: 1.1rem;
+    }
+
+    .dom-section {
+      margin-top: 2rem;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      border-radius: 18px;
+      padding: 1.5rem;
+    }
+
+    .dom-section h2 {
+      color: #000;
+      margin-bottom: 0.7rem;
+    }
+
+    .dom-section p {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    button,
+    input {
+      background: #fff;
+      color: #000;
+      min-width: 220px;
+    }
+
+
+    button {
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    input {
+      background: #fff;
+      color: #000;
+      min-width: 220px;
+    }
+
+    .counter-box,
+    .message-box,
+    .list-box,
+    .output-box {
+      background: #fafafa;
+      border: 1px solid #d9d9d9;
+      border-radius: 14px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .counter-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .highlight {
+      border-color: #000;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+    }
+
+    .dynamic-item {
+      background: #f3f3f3;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      margin-top: 0.6rem;
+      border: 1px solid #d9d9d9;
+    }
+
+    code {
+      color: #000;
+      background: #f2f2f2;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>JavaScript Foundations Showcase</h1>
+      <p>
+        So far, I have learned variables, data types, operators, conditionals, functions, arrays,
+        objects, loops, strings, math, debugging, and especially the DOM where JavaScript starts
+        making web pages interactive.
+      </p>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Variables & Data Types</h2>
+        <p>Using <code>let</code>, <code>const</code>, strings, numbers, booleans, null, and undefined.</p>
+      </article>
+
+      <article class="card">
+        <h2>Operators & Conditionals</h2>
+        <p>Working with arithmetic, comparison, logical operators, and decision-making using <code>if</code> and
+          <code>switch</code>.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Functions</h2>
+        <p>Writing reusable code with parameters, return values, regular functions, and arrow functions.</p>
+      </article>
+
+      <article class="card">
+        <h2>Arrays & Objects</h2>
+        <p>Storing and managing related data using arrays, object properties, and methods.</p>
+      </article>
+
+      <article class="card">
+        <h2>Loops, Strings & Math</h2>
+        <p>Repeating actions with loops, manipulating text, and using the Math object for calculations.</p>
+      </article>
+
+      <article class="card">
+        <h2>Errors & Debugging</h2>
+        <p>Using console methods, spotting mistakes, and improving code structure through debugging.</p>
+      </article>
+    </section>
+
+    <section class="dom-section">
+      <h2>DOM Basics — The Most Important Part So Far</h2>
+      <p>
+        The DOM is where JavaScript connects with HTML and CSS. It allows me to select elements,
+        change content, update styles, respond to clicks, create new elements, and build interactive
+        experiences users can actually see and use.
+      </p>
+
+      <div class="controls">
+        <button id="decreaseBtn">- Decrease</button>
+        <button id="increaseBtn">+ Increase</button>
+        <button id="resetBtn">Reset</button>
+        <button id="toggleStyleBtn">Toggle Highlight</button>
+      </div>
+
+      <div class="counter-box" id="counterBox">
+        <h3>Interactive Counter App</h3>
+        <p class="counter-number" id="countDisplay">0</p>
+        <p id="statusText">Start clicking the buttons to interact with the page.</p>
+      </div>
+
+      <div class="message-box">
+        <h3>Change Text Content</h3>
+        <div class="controls">
+          <input type="text" id="messageInput" placeholder="Type a message" />
+          <button id="changeTextBtn">Update Message</button>
+        </div>
+        <p id="liveMessage">This text will change using JavaScript.</p>
+      </div>
+
+      <div class="list-box">
+        <h3>Create Elements Dynamically</h3>
+        <div class="controls">
+          <input type="text" id="itemInput" placeholder="Add a new DOM item" />
+          <button id="addItemBtn">Add Item</button>
+          <button id="removeItemBtn">Remove Last</button>
+        </div>
+        <div id="dynamicList"></div>
+      </div>
+
+      <!-- <div class="output-box">
+        <h3>JavaScript Output Examples</h3>
+        <ul id="outputList"></ul>
+      </div>
+    </section> -->
+
+      <footer>
+        Built with HTML, CSS, and JavaScript to reflect my JavaScript journey so far.
+      </footer>
+  </div>
+
+  <script>
+    let count = 0;
+    const learnerName = "JavaScript Student";
+    const isLearningDOM = true;
+    let emptyValue = null;
+    let notAssigned;
+
+    const topics = [
+      "Variables",
+      "Data Types",
+      "Conditionals",
+      "Functions",
+      "Arrays",
+      "Objects",
+      "Loops",
+      "Strings",
+      "Math",
+      "DOM"
+    ];
+
+    const profile = {
+      name: learnerName,
+      focus: "Frontend Development",
+      favoriteTopic: "DOM Basics",
+      introduce() {
+        return `${this.name} is currently focusing on ${this.favoriteTopic}.`;
+      }
+    };
+
+    function updateCounterDisplay() {
+      document.getElementById("countDisplay").textContent = count;
+
+      if (count > 0) {
+        document.getElementById("statusText").textContent = "Great. The counter is above zero.";
+      } else if (count < 0) {
+        document.getElementById("statusText").textContent = "The counter is below zero now.";
+      } else {
+        document.getElementById("statusText").textContent = "The counter is back to zero.";
+      }
+    }
+
+    const addOutput = (text) => {
+      const li = document.createElement("li");
+      li.textContent = text;
+      document.getElementById("outputList").appendChild(li);
+    };
+
+    const increaseBtn = document.querySelector("#increaseBtn");
+    const decreaseBtn = document.querySelector("#decreaseBtn");
+    const resetBtn = document.querySelector("#resetBtn");
+    const toggleStyleBtn = document.querySelector("#toggleStyleBtn");
+    const counterBox = document.querySelector("#counterBox");
+    const messageInput = document.querySelector("#messageInput");
+    const changeTextBtn = document.querySelector("#changeTextBtn");
+    const liveMessage = document.querySelector("#liveMessage");
+    const itemInput = document.querySelector("#itemInput");
+    const addItemBtn = document.querySelector("#addItemBtn");
+    const removeItemBtn = document.querySelector("#removeItemBtn");
+    const dynamicList = document.querySelector("#dynamicList");
+
+    increaseBtn.addEventListener("click", function () {
+      count++;
+      updateCounterDisplay();
+    });
+
+    decreaseBtn.addEventListener("click", function () {
+      count--;
+      updateCounterDisplay();
+    });
+
+    resetBtn.addEventListener("click", function () {
+      count = 0;
+      updateCounterDisplay();
+    });
+
+    toggleStyleBtn.addEventListener("click", function () {
+      counterBox.classList.toggle("highlight");
+    });
+
+    changeTextBtn.addEventListener("click", function () {
+      const userText = messageInput.value.trim();
+      liveMessage.textContent = userText || "You did not type anything yet.";
+    });
+
+    addItemBtn.addEventListener("click", function () {
+      const value = itemInput.value.trim();
+
+      if (value === "") {
+        alert("Please enter an item first.");
+        return;
+      }
+
+      const newItem = document.createElement("div");
+      newItem.className = "dynamic-item";
+      newItem.textContent = value;
+      dynamicList.appendChild(newItem);
+      itemInput.value = "";
+    });
+
+    removeItemBtn.addEventListener("click", function () {
+      const lastItem = dynamicList.lastElementChild;
+
+      if (lastItem) {
+        dynamicList.removeChild(lastItem);
+      }
+    });
+
+    for (let i = 0; i < topics.length; i++) {
+      addOutput(`Topic ${i + 1}: ${topics[i]}`);
+    }
+
+    addOutput(`Type of count: ${typeof count}`);
+    addOutput(`Type of learnerName: ${typeof learnerName}`);
+    addOutput(`Type of isLearningDOM: ${typeof isLearningDOM}`);
+    addOutput(`Type of emptyValue: ${typeof emptyValue}`);
+    addOutput(`Type of notAssigned: ${typeof notAssigned}`);
+    addOutput(`String to number conversion: ${Number("25") + 5}`);
+    addOutput(`Math random example: ${Math.floor(Math.random() * 10) + 1}`);
+    addOutput(profile.introduce());
+
+    try {
+      const result = 10 / 2;
+      addOutput(`Calculator logic example: 10 / 2 = ${result}`);
+    } catch (error) {
+      addOutput(`An error occurred: ${error.message}`);
+    }
+  </script>
+</body>
+
+</html>
