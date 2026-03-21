@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Validator</title>
+  <title>Delayed Message App</title>
   <style>
     * {
       box-sizing: border-box;
@@ -16,46 +16,37 @@
     body {
       background: #ffffff;
       color: #000000;
-      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 100vh;
       padding: 20px;
     }
 
     .container {
       width: 100%;
-      max-width: 500px;
+      max-width: 520px;
       border: 2px solid #000;
-      border-radius: 12px;
       padding: 30px;
+      border-radius: 12px;
+      text-align: center;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
     h1 {
-      text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 2rem;
     }
 
     p {
-      text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       line-height: 1.5;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
     }
 
     input {
       width: 100%;
       padding: 12px;
+      margin-bottom: 15px;
       border: 2px solid #000;
       border-radius: 8px;
       font-size: 1rem;
@@ -63,45 +54,26 @@
       color: #000;
     }
 
-    input:focus {
-      outline: none;
-    }
-
-    .error {
-      color: #000;
-      font-size: 0.9rem;
-      margin-top: 6px;
-      min-height: 18px;
-    }
-
-    .success {
-      margin-top: 20px;
-      padding: 14px;
-      border: 2px dashed #000;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: bold;
-      min-height: 50px;
-    }
-
     .button-group {
       display: flex;
       gap: 10px;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
     button {
-      flex: 1;
-      padding: 12px;
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
-      border: none;
+      transition: 0.3s ease;
     }
 
-    .submit-btn {
-      background: #000;
-      color: #fff;
+    button:hover {
+      opacity: 0.85;
     }
 
     .clear-btn {
@@ -110,153 +82,112 @@
       border: 2px solid #000;
     }
 
-    .invalid {
-      border-color: #000;
-      background: #f6f6f6;
+    .message-box {
+      margin-top: 20px;
+      padding: 15px;
+      min-height: 70px;
+      border: 2px dashed #000;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .valid {
-      background: #fff;
+    .spinner {
+      width: 28px;
+      height: 28px;
+      border: 4px solid #d9d9d9;
+      border-top: 4px solid #000;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .status-text {
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>Form Validator</h1>
-    <p>Fill in the form correctly to see validation in action.</p>
+    <h1>Delayed Message App</h1>
+    <p>Type a message, set a delay in seconds, and display it after waiting.</p>
 
-    <form id="signupForm" novalidate>
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" placeholder="Enter your full name" />
-        <div class="error" id="nameError"></div>
-      </div>
+    <input type="text" id="messageInput" placeholder="Enter your message" />
+    <input type="number" id="delayInput" placeholder="Enter delay in seconds" min="1" value="3" />
 
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter your email" />
-        <div class="error" id="emailError"></div>
-      </div>
+    <div class="button-group">
+      <button id="showMessageBtn">Show Delayed Message</button>
+      <button id="clearBtn" class="clear-btn">Clear</button>
+    </div>
 
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" />
-        <div class="error" id="passwordError"></div>
-      </div>
-
-      <div class="button-group">
-        <button type="submit" class="submit-btn">Submit</button>
-        <button type="button" class="clear-btn" id="clearBtn">Clear</button>
-      </div>
-    </form>
-
-    <div class="success" id="successMessage">Your form status will appear here.</div>
+    <div class="message-box" id="messageBox">
+      <div class="spinner" id="spinner"></div>
+      <div class="status-text" id="statusText">Your delayed message will appear here.</div>
+    </div>
   </div>
 
   <script>
-    const form = document.getElementById('signupForm');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
+    const messageInput = document.getElementById('messageInput');
+    const delayInput = document.getElementById('delayInput');
+    const showMessageBtn = document.getElementById('showMessageBtn');
     const clearBtn = document.getElementById('clearBtn');
-    const successMessage = document.getElementById('successMessage');
+    const spinner = document.getElementById('spinner');
+    const statusText = document.getElementById('statusText');
 
-    const nameError = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-    const passwordError = document.getElementById('passwordError');
+    function delayMessage(message, delayTime) {
+      return new Promise((resolve, reject) => {
+        if (message.trim() === '') {
+          reject('Please enter a message first.');
+          return;
+        }
 
-    function showError(input, errorElement, message) {
-      input.classList.add('invalid');
-      input.classList.remove('valid');
-      errorElement.textContent = message;
+        if (delayTime <= 0 || isNaN(delayTime)) {
+          reject('Please enter a valid delay time.');
+          return;
+        }
+
+        setTimeout(() => {
+          resolve(message);
+        }, delayTime);
+      });
     }
 
-    function showSuccess(input, errorElement) {
-      input.classList.remove('invalid');
-      input.classList.add('valid');
-      errorElement.textContent = '';
-    }
+    showMessageBtn.addEventListener('click', async () => {
+      spinner.style.display = 'block';
+      statusText.textContent = 'Waiting...';
 
-    function validateName() {
-      const nameValue = nameInput.value.trim();
-
-      if (nameValue === '') {
-        showError(nameInput, nameError, 'Name is required.');
-        return false;
-      }
-
-      if (nameValue.length < 3) {
-        showError(nameInput, nameError, 'Name must be at least 3 characters.');
-        return false;
-      }
-
-      showSuccess(nameInput, nameError);
-      return true;
-    }
-
-    function validateEmail() {
-      const emailValue = emailInput.value.trim();
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (emailValue === '') {
-        showError(emailInput, emailError, 'Email is required.');
-        return false;
-      }
-
-      if (!emailPattern.test(emailValue)) {
-        showError(emailInput, emailError, 'Enter a valid email address.');
-        return false;
-      }
-
-      showSuccess(emailInput, emailError);
-      return true;
-    }
-
-    function validatePassword() {
-      const passwordValue = passwordInput.value.trim();
-
-      if (passwordValue === '') {
-        showError(passwordInput, passwordError, 'Password is required.');
-        return false;
-      }
-
-      if (passwordValue.length < 6) {
-        showError(passwordInput, passwordError, 'Password must be at least 6 characters.');
-        return false;
-      }
-
-      showSuccess(passwordInput, passwordError);
-      return true;
-    }
-
-    nameInput.addEventListener('input', validateName);
-    emailInput.addEventListener('input', validateEmail);
-    passwordInput.addEventListener('input', validatePassword);
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const isNameValid = validateName();
-      const isEmailValid = validateEmail();
-      const isPasswordValid = validatePassword();
-
-      if (isNameValid && isEmailValid && isPasswordValid) {
-        successMessage.textContent = 'Form submitted successfully!';
-      } else {
-        successMessage.textContent = 'Please fix the errors before submitting.';
+      try {
+        const message = messageInput.value;
+        const delayTime = Number(delayInput.value) * 1000;
+        const result = await delayMessage(message, delayTime);
+        statusText.textContent = result;
+      } catch (error) {
+        statusText.textContent = error;
+      } finally {
+        spinner.style.display = 'none';
       }
     });
 
-    clearBtn.addEventListener('click', function () {
-      form.reset();
-      nameError.textContent = '';
-      emailError.textContent = '';
-      passwordError.textContent = '';
-      successMessage.textContent = 'Your form status will appear here.';
-      [nameInput, emailInput, passwordInput].forEach((input) => {
-        input.classList.remove('invalid', 'valid');
-      });
+    clearBtn.addEventListener('click', () => {
+      messageInput.value = '';
+      delayInput.value = '3';
+      spinner.style.display = 'none';
+      statusText.textContent = 'Your delayed message will appear here.';
     });
   </script>
 </body>
