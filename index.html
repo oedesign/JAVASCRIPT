@@ -4,129 +4,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LDS Quote Generator</title>
+  <title>Persistent Todo App</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
+      background: #ffffff;
+      color: #000000;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-      color: #111;
-    }
-
-    .app {
-      width: 100%;
-      max-width: 700px;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 18px;
-      padding: 32px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    .badge {
-      display: inline-block;
-      background: #111;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      color: #444;
-      margin-bottom: 28px;
-      line-height: 1.6;
-    }
-
-    .quote-box {
-      background: #fafafa;
-      border: 1px solid #e5e5e5;
-      border-radius: 16px;
-      padding: 28px;
-      min-height: 220px;
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      gap: 18px;
+      align-items: flex-start;
+      padding: 40px 20px;
     }
 
-    .quote {
-      font-size: clamp(1.2rem, 3vw, 1.6rem);
-      line-height: 1.7;
-      font-weight: 600;
+    .todo-app {
+      width: 100%;
+      max-width: 500px;
+      border: 2px solid #000;
+      border-radius: 12px;
+      padding: 24px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    .author {
+    .todo-app h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      flex: 1;
+      padding: 12px;
+      border: 2px solid #000;
+      border-radius: 8px;
       font-size: 1rem;
-      color: #333;
-      text-align: right;
-      font-style: italic;
+      outline: none;
     }
 
-    .status {
-      margin-top: 18px;
-      min-height: 24px;
-      font-size: 0.95rem;
-      color: #222;
+    .input-group button {
+      padding: 12px 18px;
+      border: none;
+      background: #000;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .input-group button:hover {
+      opacity: 0.9;
     }
 
     .actions {
       display: flex;
-      gap: 14px;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-top: 24px;
     }
 
-    button {
-      border: none;
-      border-radius: 12px;
-      padding: 14px 18px;
-      font-size: 1rem;
-      font-weight: 700;
+    .actions button {
+      flex: 1;
+      min-width: 140px;
+      padding: 10px;
+      border: 2px solid #000;
+      background: #fff;
+      color: #000;
+      border-radius: 8px;
       cursor: pointer;
-      transition: 0.2s ease;
+      font-size: 0.95rem;
     }
 
-    button:hover {
-      transform: translateY(-2px);
-    }
-
-    .primary {
-      background: #111;
+    .actions button:hover {
+      background: #000;
       color: #fff;
     }
 
-    .secondary {
-      background: #e5e5e5;
-      color: #111;
+    ul {
+      list-style: none;
     }
 
-    @media (max-width: 600px) {
-      .app {
-        padding: 24px;
-      }
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid #000;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
 
-      .actions {
+    .task-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .task-text {
+      word-break: break-word;
+    }
+
+    .completed .task-text {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    .delete-btn {
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .delete-btn:hover {
+      opacity: 0.9;
+    }
+
+    .empty-message {
+      text-align: center;
+      margin-top: 10px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 500px) {
+      .input-group {
         flex-direction: column;
       }
 
-      button {
+      .input-group button {
         width: 100%;
       }
     }
@@ -134,115 +157,132 @@
 </head>
 
 <body>
-  <main class="app">
-    <span class="badge">Week 12 Project</span>
-    <h1>LDS Quote Generator</h1>
-    <p class="subtitle">
-      Display inspiring quotes from prophets and apostles of The Church of Jesus Christ of Latter-day Saints.
-    </p>
+  <div class="todo-app">
+    <h1>Todo App</h1>
 
-    <section class="quote-box">
-      <p class="quote" id="quote">Click “New Quote” to see an inspiring message.</p>
-      <p class="author" id="author">— Prophet or Apostle</p>
-    </section>
-
-    <div class="status" id="status" aria-live="polite"></div>
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Enter a new task..." />
+      <button id="addTaskBtn">Add</button>
+    </div>
 
     <div class="actions">
-      <button class="primary" id="newQuoteBtn">New Quote</button>
-      <button class="secondary" id="copyBtn">Copy Quote</button>
+      <button id="clearCompletedBtn">Clear Completed</button>
+      <button id="clearAllBtn">Clear All</button>
     </div>
-  </main>
+
+    <ul id="taskList"></ul>
+    <p class="empty-message" id="emptyMessage">No tasks yet. Add one above.</p>
+  </div>
 
   <script>
-    const quotes = [
-      {
-        text: "Faith in Jesus Christ is the foundation of all belief and the conduit of divine power.",
-        author: "Russell M. Nelson"
-      },
-      {
-        text: "In coming days, it will not be possible to survive spiritually without the guiding, directing, comforting, and constant influence of the Holy Ghost.",
-        author: "Russell M. Nelson"
-      },
-      {
-        text: "Try a little harder to be a little better.",
-        author: "Gordon B. Hinckley"
-      },
-      {
-        text: "Be of good cheer. The future is as bright as your faith.",
-        author: "Thomas S. Monson"
-      },
-      {
-        text: "Doubt your doubts before you doubt your faith.",
-        author: "Dieter F. Uchtdorf"
-      },
-      {
-        text: "The joy we feel has little to do with the circumstances of our lives and everything to do with the focus of our lives.",
-        author: "Russell M. Nelson"
-      },
-      {
-        text: "True discipleship is for today, tomorrow, and forever.",
-        author: "Jeffrey R. Holland"
-      },
-      {
-        text: "No matter how late you think you are, how many chances you think you have missed, there is always a way back.",
-        author: "Jeffrey R. Holland"
-      },
-      {
-        text: "The Lord loves effort.",
-        author: "Russell M. Nelson"
-      },
-      {
-        text: "You are stronger than you realize. More capable than you can imagine.",
-        author: "Dieter F. Uchtdorf"
+    const taskInput = document.getElementById("taskInput");
+    const addTaskBtn = document.getElementById("addTaskBtn");
+    const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+    const clearAllBtn = document.getElementById("clearAllBtn");
+    const taskList = document.getElementById("taskList");
+    const emptyMessage = document.getElementById("emptyMessage");
+
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    function saveTasks() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function renderTasks() {
+      taskList.innerHTML = "";
+
+      if (tasks.length === 0) {
+        emptyMessage.style.display = "block";
+      } else {
+        emptyMessage.style.display = "none";
       }
-    ];
 
-    const quoteEl = document.getElementById("quote");
-    const authorEl = document.getElementById("author");
-    const statusEl = document.getElementById("status");
-    const newQuoteBtn = document.getElementById("newQuoteBtn");
-    const copyBtn = document.getElementById("copyBtn");
+      tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        if (task.completed) {
+          li.classList.add("completed");
+        }
 
-    let lastIndex = -1;
+        li.innerHTML = `
+          <div class="task-left">
+            <input type="checkbox" ${task.completed ? "checked" : ""} data-index="${index}" class="complete-checkbox">
+            <span class="task-text">${task.text}</span>
+          </div>
+          <button class="delete-btn" data-index="${index}">Delete</button>
+        `;
 
-    function getRandomQuote() {
-      let randomIndex;
+        taskList.appendChild(li);
+      });
 
-      do {
-        randomIndex = Math.floor(Math.random() * quotes.length);
-      } while (randomIndex === lastIndex && quotes.length > 1);
-
-      lastIndex = randomIndex;
-      return quotes[randomIndex];
+      addEventListeners();
     }
 
-    function displayQuote() {
-      statusEl.textContent = "Loading quote...";
+    function addTask() {
+      const text = taskInput.value.trim();
 
-      setTimeout(() => {
-        const randomQuote = getRandomQuote();
-        quoteEl.textContent = `“${randomQuote.text}”`;
-        authorEl.textContent = `— ${randomQuote.author}`;
-        statusEl.textContent = "Quote loaded successfully.";
-      }, 500);
-    }
-
-    async function copyQuote() {
-      const textToCopy = `${quoteEl.textContent} ${authorEl.textContent}`;
-
-      try {
-        await navigator.clipboard.writeText(textToCopy);
-        statusEl.textContent = "Quote copied to clipboard.";
-      } catch (error) {
-        statusEl.textContent = "Could not copy the quote.";
+      if (text === "") {
+        alert("Please enter a task.");
+        return;
       }
+
+      tasks.push({
+        text: text,
+        completed: false
+      });
+
+      saveTasks();
+      renderTasks();
+      taskInput.value = "";
+      taskInput.focus();
     }
 
-    newQuoteBtn.addEventListener("click", displayQuote);
-    copyBtn.addEventListener("click", copyQuote);
+    function addEventListeners() {
+      const deleteButtons = document.querySelectorAll(".delete-btn");
+      const checkboxes = document.querySelectorAll(".complete-checkbox");
 
-    displayQuote();
+      deleteButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          const index = e.target.dataset.index;
+          tasks.splice(index, 1);
+          saveTasks();
+          renderTasks();
+        });
+      });
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", (e) => {
+          const index = e.target.dataset.index;
+          tasks[index].completed = e.target.checked;
+          saveTasks();
+          renderTasks();
+        });
+      });
+    }
+
+    function clearCompleted() {
+      tasks = tasks.filter(task => !task.completed);
+      saveTasks();
+      renderTasks();
+    }
+
+    function clearAll() {
+      tasks = [];
+      localStorage.removeItem("tasks");
+      renderTasks();
+    }
+
+    addTaskBtn.addEventListener("click", addTask);
+
+    taskInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        addTask();
+      }
+    });
+
+    clearCompletedBtn.addEventListener("click", clearCompleted);
+    clearAllBtn.addEventListener("click", clearAll);
+
+    renderTasks();
   </script>
 </body>
 

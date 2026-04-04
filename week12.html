@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LDS Quote Generator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      color: #111;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 700px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #111;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #444;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .quote-box {
+      background: #fafafa;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: 28px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .quote {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .author {
+      font-size: 1rem;
+      color: #333;
+      text-align: right;
+      font-style: italic;
+    }
+
+    .status {
+      margin-top: 18px;
+      min-height: 24px;
+      font-size: 0.95rem;
+      color: #222;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      background: #111;
+      color: #fff;
+    }
+
+    .secondary {
+      background: #e5e5e5;
+      color: #111;
+    }
+
+    @media (max-width: 600px) {
+      .app {
+        padding: 24px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="app">
+    <span class="badge">Week 12 Project</span>
+    <h1>LDS Quote Generator</h1>
+    <p class="subtitle">
+      Display inspiring quotes from prophets and apostles of The Church of Jesus Christ of Latter-day Saints.
+    </p>
+
+    <section class="quote-box">
+      <p class="quote" id="quote">Click “New Quote” to see an inspiring message.</p>
+      <p class="author" id="author">— Prophet or Apostle</p>
+    </section>
+
+    <div class="status" id="status" aria-live="polite"></div>
+
+    <div class="actions">
+      <button class="primary" id="newQuoteBtn">New Quote</button>
+      <button class="secondary" id="copyBtn">Copy Quote</button>
+    </div>
+  </main>
+
+  <script>
+    const quotes = [
+      {
+        text: "Faith in Jesus Christ is the foundation of all belief and the conduit of divine power.",
+        author: "Russell M. Nelson"
+      },
+      {
+        text: "In coming days, it will not be possible to survive spiritually without the guiding, directing, comforting, and constant influence of the Holy Ghost.",
+        author: "Russell M. Nelson"
+      },
+      {
+        text: "Try a little harder to be a little better.",
+        author: "Gordon B. Hinckley"
+      },
+      {
+        text: "Be of good cheer. The future is as bright as your faith.",
+        author: "Thomas S. Monson"
+      },
+      {
+        text: "Doubt your doubts before you doubt your faith.",
+        author: "Dieter F. Uchtdorf"
+      },
+      {
+        text: "The joy we feel has little to do with the circumstances of our lives and everything to do with the focus of our lives.",
+        author: "Russell M. Nelson"
+      },
+      {
+        text: "True discipleship is for today, tomorrow, and forever.",
+        author: "Jeffrey R. Holland"
+      },
+      {
+        text: "No matter how late you think you are, how many chances you think you have missed, there is always a way back.",
+        author: "Jeffrey R. Holland"
+      },
+      {
+        text: "The Lord loves effort.",
+        author: "Russell M. Nelson"
+      },
+      {
+        text: "You are stronger than you realize. More capable than you can imagine.",
+        author: "Dieter F. Uchtdorf"
+      }
+    ];
+
+    const quoteEl = document.getElementById("quote");
+    const authorEl = document.getElementById("author");
+    const statusEl = document.getElementById("status");
+    const newQuoteBtn = document.getElementById("newQuoteBtn");
+    const copyBtn = document.getElementById("copyBtn");
+
+    let lastIndex = -1;
+
+    function getRandomQuote() {
+      let randomIndex;
+
+      do {
+        randomIndex = Math.floor(Math.random() * quotes.length);
+      } while (randomIndex === lastIndex && quotes.length > 1);
+
+      lastIndex = randomIndex;
+      return quotes[randomIndex];
+    }
+
+    function displayQuote() {
+      statusEl.textContent = "Loading quote...";
+
+      setTimeout(() => {
+        const randomQuote = getRandomQuote();
+        quoteEl.textContent = `“${randomQuote.text}”`;
+        authorEl.textContent = `— ${randomQuote.author}`;
+        statusEl.textContent = "Quote loaded successfully.";
+      }, 500);
+    }
+
+    async function copyQuote() {
+      const textToCopy = `${quoteEl.textContent} ${authorEl.textContent}`;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        statusEl.textContent = "Quote copied to clipboard.";
+      } catch (error) {
+        statusEl.textContent = "Could not copy the quote.";
+      }
+    }
+
+    newQuoteBtn.addEventListener("click", displayQuote);
+    copyBtn.addEventListener("click", copyQuote);
+
+    displayQuote();
+  </script>
+</body>
+
+</html>
